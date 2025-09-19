@@ -20,7 +20,7 @@ test('should throw an error if type is not valid', () => {
 });
 
 test ('must change level, attack, defence', () => {
-    const character = new Character('Bob', 'Bowman', 100, 1, 25, 25)
+    const character = new Character('Bob', 'Bowman', 25, 25)
     character.levelUp()
     const correct = {
         name: 'Bob',
@@ -47,12 +47,12 @@ test ('should not level up a dead character', () => {
 });
 
 test ('should decrease health', () => {
-    const character = new Character('Bob', 'Bowman', 100, 1, 25, 25)
+    const character = new Character('Bob', 'Bowman', 25, 25)
     character.damage(50)
     expect(character.health).toEqual(62.5)  
 });
 test ('should health=0 if health < 0', () => {
-    const character = new Character('Bob', 'Bowman', 100, 1, 25, 25)
+    const character = new Character('Bob', 'Bowman', 25, 25)
     character.health = 35
     character.damage(50)
     expect(character.health).toEqual(0)  
